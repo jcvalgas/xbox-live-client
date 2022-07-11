@@ -11,9 +11,12 @@ const whiteHeadingStyle = () => css`
 
 const greenHeadingStyle = () => css`
   font-family: ${constants.fontFamilly};
-  color: ${colors.textColor};
-  font-size: ${constants.headingFontSize};
-  font-weight: ${constants.headingFontWeight};
+  font-size: ${constants.headingFontSizeSmall};
+  letter-spacing: .2rem;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px;
+  -webkit-text-fill-color: ${colors.textGreen};
+  -webkit-text-stroke-color: #1A431A;
 `;
 
 const bodyStyle = () => css`

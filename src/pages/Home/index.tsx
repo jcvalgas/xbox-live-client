@@ -8,7 +8,7 @@ import DiscordIcon from '../../assets/icons/white-discord-icon.png'
 import GithubIcon from '../../assets/icons/white-github-icon.png'
 import LinkedinIcon from '../../assets/icons/white-linkedin-icon.png'
 
-export const Home = () => {
+const Home = () => {
     return (
         <S.Home>
             <header>
@@ -17,7 +17,7 @@ export const Home = () => {
                     <S.NavContainerLinks>
                         <S.NavLink>FAQ</S.NavLink>
                         <S.NavLink>Contact</S.NavLink>
-                        <S.ButtonToLogin>Login</S.ButtonToLogin>
+                        <S.ButtonToLogin href='/login'>Login</S.ButtonToLogin>
                     </S.NavContainerLinks>
                 </S.HomeNav>
                 <S.HomeContainer>
@@ -27,8 +27,8 @@ export const Home = () => {
                             <S.HeadingPrimarySub>Entre agora ou Cadastre-se</S.HeadingPrimarySub>
                         </S.HeadingPrimary>
                         <S.ButtonContainer>
-                            <S.ButtonToLoginActive>Login</S.ButtonToLoginActive>
-                            <S.ButtonToRegister>Register</S.ButtonToRegister>
+                            <S.ButtonToLoginActive href='/login'>Login</S.ButtonToLoginActive>
+                            <S.ButtonToRegister href='/register'>Register</S.ButtonToRegister>
                         </S.ButtonContainer>
                     </S.TextBox>
                     <S.LogoBox>
@@ -107,7 +107,7 @@ export const Home = () => {
 Copyright © by João Vitor C. Valgas. You have 100% usage permission to use this webpage for personal and commercial purposes, but NOT to claim it as your own design. A credit to the original author, J. C. Valgas, is obviously greatly appreciated!</div>
                     </S.Row>
                     <S.FooterIcons>
-                        <img src={DiscordIcon} />
+                        <img src={DiscordIcon}/>
                         <img src={GithubIcon} />
                         <img src={LinkedinIcon} />
                     </S.FooterIcons>
