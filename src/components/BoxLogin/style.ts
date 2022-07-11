@@ -6,7 +6,7 @@ export const BoxLogin = styled.div`
   ${() => css`
         width: 100rem;
         height 53rem;
-        background-image: linear-gradient(90deg, rgba(28, 27, 40, .95) 0%, rgba(28, 27, 40, .95), 50%, transparent 50%), url(${bgBoxLogin});
+        background-image: linear-gradient(90deg, rgba(28, 27, 40) 0%, rgba(28, 27, 40), 50%, transparent 50%), url(${bgBoxLogin});
         background-repeat: no-repeat;
         background-size: contain;
         background-position: right;
