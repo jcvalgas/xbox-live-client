@@ -41,7 +41,7 @@ export const BoxContainerHeading = styled.h1`
 
 export const BoxContainerForm = styled.form`
   ${({ theme }) => css`
-    width: 65%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -56,6 +56,9 @@ export const BoxContainerForm = styled.form`
       box-sizing: border-box;
       color: ${theme.colors.colorBlack};
     }
+    button {
+        ${theme.mixins.primaryButton()};
+      }
   `}
 `;
 
@@ -73,28 +76,6 @@ export const BoxContainerHeadingSecondary = styled.h2`
         font-weight: 800;
         letter-spacing: 1px;
       }
-    }
-  `}
-`;
-
-export const BoxContainerButtonLogin = styled.a`
-  ${({ theme }) => css`
-    &:link,
-    &:visited {
-      text-decoration: none;
-    }
-    margin-top: -1.5rem;
-    text-align: center;
-    width: 25%;
-    padding: 0.7rem 0;
-    color: ${theme.colors.textColor};
-    font-size: ${theme.constants.bodyFontSize};
-    border: 1px solid #8e73b4;
-    border-radius: 0.8rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    &:hover {
-      background-color: #8e73b4;
     }
   `}
 `;

@@ -4,9 +4,9 @@ import bgRegister from "../../assets/imgs/bg-register.png";
 export const Register = styled.section`
   ${({theme}) => css`
     min-width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     box-sizing: border-box;
-    padding: 1.5rem 1.5rem 0 1.5rem;
+    padding: 1.5rem;
     background-color: ${theme.colors.primaryColorDark};
   `}
 `;
@@ -14,6 +14,7 @@ export const Register = styled.section`
 export const RegisterContent = styled.div`
     ${({theme}) => css`
     width: 100%;
+    height: 98%;
     background-image: linear-gradient(
         rgb(134, 239, 134, 0.4),
         rgb(134, 239, 134, 0.4)

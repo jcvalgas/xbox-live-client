@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const BoxRegister = styled.div`
     ${({theme}) => css`
-        height: 100vh;
+        height: 100%;
         width: 100%;
         background-color: ${theme.colors.secondaryColor};
         clip-path: polygon(60% 0, 100% 0 , 100% 100%, 40% 100%);
@@ -32,7 +32,7 @@ export const BoxContainerHeading = styled.h1`
 
 export const BoxContainerLogo = styled.img`
     ${() => css`
-        height: 15rem;
+        height: 12rem;
         width: auto;
     `}
 `
