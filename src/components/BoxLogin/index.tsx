@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { loginService } from "../../services/authService";
 import GreenXboxLogo from "../../assets/icons/green-xbox-icon.png";
 import * as S from "./style";
@@ -14,6 +15,8 @@ const BoxLogin = (props: any) => {
     password: '',
   });
 
+  let navigate = useNavigate()
+
   const handleChangeValues = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValues((values: userLoginObj) => ({
       ...values,
@@ -25,7 +28,12 @@ const BoxLogin = (props: any) => {
     event.preventDefault();
 
     const response  = await loginService.login(values);
-    console.log(response);
+    const jwt = response.data.token;
+    
+    if(jwt) {
+      localStorage.setItem('jwt', jwt);
+      navigate('/profiles');
+    }
     
     
   }
