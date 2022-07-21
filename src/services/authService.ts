@@ -22,6 +22,14 @@ const loginService = {
       .catch((err: any) => {
         console.log(`ERRO NA CHAMADA:\n${err}`);
       }),
+
+  loggedUser: () =>
+    api
+      .get("/auth")
+      .then((response: any) => response.data)
+      .catch((err: any) => {
+        console.log(`ERRO NA CHAMADA:\n${err}`);
+      }),
 };
 
 const registerService = {

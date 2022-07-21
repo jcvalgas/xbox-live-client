@@ -1,10 +1,10 @@
 import * as S from './style';
 
-const CardProfile = (props:any) => {
+const CardProfile = ({data}: any) => {
     return (
         <S.CardProfile>
-            <S.CardProfileImage src={props.imageUrl}/>
-            <S.CardProfileTitle>{props.title}</S.CardProfileTitle>
+            <S.CardProfileImage src={data.imageUrl}/>
+            <S.CardProfileTitle>{data.title}</S.CardProfileTitle>
         </S.CardProfile>
     );
 }

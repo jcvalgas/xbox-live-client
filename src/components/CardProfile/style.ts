@@ -14,11 +14,12 @@ export const CardProfileImage = styled.img`
     height: auto;
     width: 15rem;
     border-radius: 100%;
+    border: .2rem solid transparent;
     box-shadow: .1rem .1rem 5rem 1rem rgba(0,0,0, .5);
     cursor: pointer;
     transition: all .2s;
     &:hover {
-        border: .2rem solid white
+        border: .2rem solid white;
     }
   `}
 `;
