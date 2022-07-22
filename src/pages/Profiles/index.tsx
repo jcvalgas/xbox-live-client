@@ -4,13 +4,13 @@ import CardProfile from "../../components/CardProfile";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const token = localStorage.getItem("jwt");
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([]);
   let navigate = useNavigate();
 
   const userLogged = async () => {
+    const token = localStorage.getItem("jwt");
     if (!token) {
       navigate("/login");
       console.log("Erro, usuário não autenticado");
@@ -21,20 +21,16 @@ const Profiles = () => {
 
   useEffect(() => {
     userLogged();
-  }, []);
-
-  console.log(profiles);
-  
+  }, []);  
 
   return (
     <S.Profiles>
       <S.ProfileContainer>
         <S.ProfileContainerMain>
           {profiles.map((profile: any, index) => <CardProfile key={index} data={profile} />)}
-          
         </S.ProfileContainerMain>
-        <S.ProfileContainerButtonCreateProfile href="/edit-profile">
-          Gerenciar usuários
+        <S.ProfileContainerButtonCreateProfile href="/settings/profiles">
+          Gerenciar perfis
         </S.ProfileContainerButtonCreateProfile>
       </S.ProfileContainer>
     </S.Profiles>

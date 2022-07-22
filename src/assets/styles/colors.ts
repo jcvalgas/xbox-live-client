@@ -11,6 +11,8 @@ export const colors = {
   tertiaryColor: "70AB90",
   tertiaryColorLight: "#2B2846",
 
+  bgProfileCrud: "#293045",
+
   baseForm: "#D9D9D9",
 
   textGreen: "#38A938",
