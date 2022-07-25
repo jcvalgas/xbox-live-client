@@ -38,6 +38,7 @@ export const BoxProfileCreateAvatarBox = styled.div`
     background-color: ${theme.colors.bgProfileCrud};
     border-radius: 100%;
     position: relative;
+    overflow: hidden;
   `}
 `;
 
@@ -50,6 +51,7 @@ export const BoxProfileCreateAvatar = styled.img`
     opacity: 0.5;
     width: auto;
     height: 80%;
+    border-radius: 100%;
   `}
 `;
 

@@ -48,7 +48,7 @@ const BoxProfileCreate = (props: any) => {
         Criar novo perfil de usuário
       </S.BoxProfileCreateHeading>
       <S.BoxProfileCreateAvatarBox>
-        <S.BoxProfileCreateAvatar src={defaultAvatar} />
+        <S.BoxProfileCreateAvatar src={values.imageUrl == '' ? defaultAvatar : values.imageUrl} />
       </S.BoxProfileCreateAvatarBox>
       <S.BoxProfileCreateForm onSubmit={submitProfile}>
         <S.BoxProfileCreateFormInputImg
