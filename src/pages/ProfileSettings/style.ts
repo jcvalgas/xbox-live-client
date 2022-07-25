@@ -25,11 +25,13 @@ export const Aside = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
     `}
 `
 
 export const BgLogo = styled.img`
     ${() => css`
+        position: absolute;
         opacity: .2;
         height: 35rem;
         width: auto;

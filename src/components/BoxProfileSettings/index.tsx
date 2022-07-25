@@ -32,9 +32,13 @@ const BoxProfileSettings = () => {
           <CardProfileSettings key={index} data={data} />
         ))}
       </S.BoxProfileSettingsContainer>
-      <S.BoxProfileSettingsContainerButtonReturn href="/profiles">
-        Voltar
-      </S.BoxProfileSettingsContainerButtonReturn>
+      <S.BoxProfileSettingsBtns>
+        <S.BoxProfileSettingsBtnsReturn href="/profiles">
+          Voltar
+        </S.BoxProfileSettingsBtnsReturn>
+        <S.BoxProfileSettingsBtnsCreate href="#create">Criar Perfil</S.BoxProfileSettingsBtnsCreate>
+      </S.BoxProfileSettingsBtns>
+      
     </S.BoxProfileSettings>
   );
 };

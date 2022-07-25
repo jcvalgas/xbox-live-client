@@ -9,13 +9,13 @@ interface userLoginObj {
   password: string
 }
 
-const BoxLogin = (props: any) => {
+const BoxLogin = () => {
   const [values, setValues] = useState({
     email: '',
     password: '',
   });
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const handleChangeValues = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValues((values: userLoginObj) => ({
@@ -29,9 +29,11 @@ const BoxLogin = (props: any) => {
 
     const response  = await loginService.login(values);
     const jwt = response.data.token;
+    const userId = response.data.user.id;
     
     if(jwt) {
       localStorage.setItem('jwt', jwt);
+      localStorage.setItem('userId', userId);
       navigate('/profiles');
     }
     

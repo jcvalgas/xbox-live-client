@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profiles from './pages/Profiles';
-import ProfileSettings from './pages/Profile_Settings';
+import ProfileSettings from './pages/ProfileSettings';
 
 const Router = () => {
     return (
