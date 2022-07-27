@@ -1,6 +1,6 @@
 import * as S from "./style";
 import defaultAvatar from "../../assets/icons/dark-image-profile-icon.png";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createService } from "../../services/profileService";
 import { useNavigate } from "react-router-dom";
 

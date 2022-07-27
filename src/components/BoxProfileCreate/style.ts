@@ -11,13 +11,11 @@ export const BoxProfileCreate = styled.div`
     height: 85%;
     width: 55%;
     z-index: 1;
-    opacity: 0;
-    visibility: hidden;
+    display: none;
     transition: all .3s;
 
     &:target {
-      opacity: 1;
-      visibility: visible;
+      display: flex;
     }
   `}
 `;
@@ -59,13 +57,15 @@ export const BoxProfileCreateForm = styled.form`
   ${({ theme }) => css`
     width: 85%;
     height: auto;
-
+    display: flex;
+    flex-direction: column;
     input {
       margin: 0 auto 6rem auto;
       outline: none;
-      display: block;
       text-align: center;
       transition: all 0.1s;
+      text-align: center;
+      color: ${theme.colors.baseForm};
       &::placeholder {
         text-align: center;
         color: ${theme.colors.baseForm};
@@ -122,3 +122,4 @@ export const BoxProfileCreateFormBtnSubmit = styled.button`
     }
   `}
 `;
+

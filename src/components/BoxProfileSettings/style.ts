@@ -21,8 +21,8 @@ export const BoxProfileSettingsHeader = styled.h1`
 `;
 
 export const BoxProfileSettingsContainer = styled.div`
-  ${({ theme }) => css`
-    height: auto;
+  ${({theme}) => css`
+    height: 32rem;
     width: 75%;
     display: flex;
     flex-direction: column;
@@ -30,6 +30,17 @@ export const BoxProfileSettingsContainer = styled.div`
     background-color: #292f45;
     padding: 2rem 0;
     border-radius: 2rem;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 1.2rem;
+    };
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${theme.colors.secondaryColor};
+      border-radius: 5rem;
+    };
+
   `}
 `;
 
