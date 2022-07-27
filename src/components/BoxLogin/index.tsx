@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginService } from "../../services/authService";
 import GreenXboxLogo from "../../assets/icons/green-xbox-icon.png";
+import swall from 'sweetalert'
 import * as S from "./style";
 
 interface userLoginObj {
@@ -34,6 +35,11 @@ const BoxLogin = () => {
     if(jwt) {
       localStorage.setItem('jwt', jwt);
       localStorage.setItem('userId', userId);
+      swall({
+        title: 'Seja bem vindo!',
+        icon: 'success',
+        timer: 2000
+      })
       navigate('/profiles');
     }
     

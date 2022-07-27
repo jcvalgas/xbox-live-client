@@ -3,6 +3,7 @@ import defaultAvatar from "../../assets/icons/dark-image-profile-icon.png";
 import React, { useEffect, useState } from "react";
 import { createService } from "../../services/profileService";
 import { useNavigate } from "react-router-dom";
+import swall from 'sweetalert'
 
 interface profileCreateObj {
   title: string;
@@ -36,7 +37,11 @@ const BoxProfileCreate = (props: any) => {
     console.log(response);
     
     if(response.status == 201) {
-      console.log('Sucess');
+      swall({
+        title: 'Perfil criado com sucesso!',
+        icon: 'success',
+        timer: 2000
+      })
       navigate('/settings/profiles')
     }
   }

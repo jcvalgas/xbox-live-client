@@ -1,4 +1,5 @@
 import api from "./api";
+import swall from 'sweetalert'
 
 interface userLoginObj {
   email: string;
@@ -20,7 +21,12 @@ const loginService = {
       .post("/auth", values)
       .then((response: any) => response)
       .catch((err: any) => {
-        console.log(`ERRO NA CHAMADA:\n${err}`);
+        swall({
+          title: 'Erro!',
+          text: `${err.message}`,
+          icon: 'error',
+          timer: 7000
+        })
       }),
 
   loggedUser: () =>
@@ -28,7 +34,12 @@ const loginService = {
       .get("/auth")
       .then((response: any) => response.data)
       .catch((err: any) => {
-        console.log(`ERRO NA CHAMADA:\n${err}`);
+        swall({
+          title: 'Erro!',
+          text: `${err.message}`,
+          icon: 'error',
+          timer: 7000
+        })
       }),
 };
 
@@ -38,7 +49,12 @@ const registerService = {
       .post("/user", values)
       .then((response: any) => response)
       .catch((err: any) => {
-        console.log(`ERRO NA CHAMADA:\n${err}`);
+        swall({
+          title: 'Erro!',
+          text: `${err.message}`,
+          icon: 'error',
+          timer: 7000
+        })
       }),
 };
 

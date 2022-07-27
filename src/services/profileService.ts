@@ -1,4 +1,5 @@
 import api from "./api";
+import swall from 'sweetalert';
 
 interface profileCreateObj {
   title: string;
@@ -12,7 +13,14 @@ const createService = {
     api
       .post("/profile", values)
       .then((response: any) => response)
-      .catch((err: any) => err),
+      .catch((err: any) => {
+        swall({
+          title: 'Erro!',
+          text: `${err.message}`,
+          icon: 'error',
+          timer: 7000
+        })
+      }),
 };
 
 export {createService}

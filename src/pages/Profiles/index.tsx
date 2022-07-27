@@ -3,7 +3,7 @@ import { loginService } from "../../services/authService";
 import CardProfile from "../../components/CardProfile";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import swall from 'sweetalert'
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([]);
@@ -12,8 +12,12 @@ const Profiles = () => {
   const userLogged = async () => {
     const token = localStorage.getItem("jwt");
     if (!token) {
+      swall({
+        title: 'Você não está logado, tente novamente',
+        icon: 'error',
+        timer: 3000
+      })
       navigate("/login");
-      console.log("Erro, usuário não autenticado");
     }
     const response = await loginService.loggedUser();
     setProfiles(response.profiles);

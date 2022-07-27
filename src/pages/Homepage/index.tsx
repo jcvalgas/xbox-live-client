@@ -3,6 +3,8 @@ import defaultAvatar from "../../assets/icons/dark-image-profile-icon.png";
 import GameRow from "../../components/GameRow";
 import { useEffect, useState } from "react";
 import { homepageService } from "../../services/homepageService";
+import { useNavigate } from "react-router-dom";
+import swall from 'sweetalert';
 
 interface Game {
   coverImageUrl: string;
@@ -19,7 +21,20 @@ interface GameByGenrerObj {
 const Homepage = () => {
   const [gameList, setGameList] = useState<GameByGenrerObj[]>([]);
 
+  let navigate = useNavigate();
+
   const loadHomePage = async () => {
+    const token = localStorage.getItem('jwt');
+
+    if(!token) {
+        swall({
+            title: 'Você não está logado, tente novamente',
+            icon: 'error',
+            timer: 3000
+          })
+          navigate("/login");
+    }
+
     const profileId = "9b80fe99-3652-4eb8-b40a-c88a1ce0cf8f";
     let response = await homepageService.home(profileId);
     const favoritos: GameByGenrerObj = {name: 'Favoritos', games: response.favoritos.favoritos};

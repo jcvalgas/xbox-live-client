@@ -3,6 +3,7 @@ import { registerService } from '../../services/authService';
 import GreenXboxLogo from '../../assets/icons/green-xbox-icon.png'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import swall from 'sweetalert';
 
 interface userRegisterObj {
         name: string,
@@ -36,6 +37,11 @@ const BoxRegister = () => {
         event.preventDefault();
         const response = await registerService.register(values)
         if(response.status == 201) {
+            swall({
+                title: 'Cadastro feito com sucesso',
+                icon: 'success',
+                timer: 3000
+            })
             navigate('/login');
         }
         
