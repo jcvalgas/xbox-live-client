@@ -1,4 +1,6 @@
 import styled, { css } from "styled-components";
+import bgHomePage from '../../assets/imgs/bg-homepage.png';
+
 
 export const Profiles = styled.section`
   ${() => css`
@@ -13,10 +15,9 @@ export const Profiles = styled.section`
 
 export const ProfileContainer = styled.div`
   ${() => css`
-    background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.1)), linear-gradient(135deg, rgba(1,79,102,1) 0%, rgba(0,0,0,1) 50%, rgba(58,102,49,1) 100%);
-    background-position: center;
+    background-image: url(${bgHomePage});
     background-size: cover;
-    background-blend-mode: darken;
+    background-position: center;
     height: 100%;
     width: 100%;
     display: flex;

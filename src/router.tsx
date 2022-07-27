@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profiles from './pages/Profiles';
 import ProfileSettings from './pages/ProfileSettings';
+import Homepage from './pages/Homepage';
 
 const Router = () => {
     return (
@@ -14,6 +15,7 @@ const Router = () => {
             <Route path={RoutePath.LOGIN} element={<Login />} /> 
             <Route path={RoutePath.PROFILES} element={<Profiles />} />
             <Route path={RoutePath.SETTINGS_PROFILES} element={<ProfileSettings />} />
+            <Route path={RoutePath.HOMEPAGE} element={<Homepage />} />
         </Routes>
     )
 }
