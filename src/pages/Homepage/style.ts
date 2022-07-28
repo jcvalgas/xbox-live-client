@@ -29,6 +29,13 @@ export const HomepageContentHeader = styled.div`
             width: auto;
             height: 6rem;
             border-radius: 100%;
+            border: .2rem solid transparent;
+            cursor: pointer;
+            transition: all .2s;
+
+            &:hover {
+                border: .2rem solid white;
+            }
         }
 
         span {

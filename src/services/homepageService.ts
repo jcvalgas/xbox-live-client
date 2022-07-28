@@ -2,7 +2,7 @@ import api from "./api";
 import swall from 'sweetalert';
 
 const homepageService = {
-  home: (id: string) =>
+  home: (id: string | null) =>
     api
       .get(`/homepage/${id}`)
       .then((response: any) => response.data)

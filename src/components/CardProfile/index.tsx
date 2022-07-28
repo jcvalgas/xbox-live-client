@@ -1,8 +1,13 @@
 import * as S from './style';
 
-const CardProfile = ({data}: any) => {
+interface cardProfileProps {
+    data: any;
+    clickItem: any
+}
+
+const CardProfile = ({data, clickItem}: cardProfileProps) => {
     return (
-        <S.CardProfile>
+        <S.CardProfile onClick={() => clickItem(data.id)}>
             <S.CardProfileImage src={data.imageUrl}/>
             <S.CardProfileTitle>{data.title}</S.CardProfileTitle>
         </S.CardProfile>

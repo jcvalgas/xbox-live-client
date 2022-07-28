@@ -1,5 +1,4 @@
 import * as S from "./style";
-import defaultAvatar from "../../assets/icons/dark-image-profile-icon.png";
 import GameRow from "../../components/GameRow";
 import { useEffect, useState } from "react";
 import { homepageService } from "../../services/homepageService";
@@ -20,7 +19,10 @@ interface GameByGenrerObj {
 
 const Homepage = () => {
   const [gameList, setGameList] = useState<GameByGenrerObj[]>([]);
-
+  const [profile, setProfile] = useState({
+    title: '',
+    imageUrl: ''
+  })
   let navigate = useNavigate();
 
   const loadHomePage = async () => {
@@ -35,30 +37,32 @@ const Homepage = () => {
           navigate("/login");
     }
 
-    const profileId = "9b80fe99-3652-4eb8-b40a-c88a1ce0cf8f";
+    const profileId = localStorage.getItem('profileId');
     let response = await homepageService.home(profileId);
+    
     const favoritos: GameByGenrerObj = {name: 'Favoritos', games: response.favoritos.favoritos};
     const gameByGender = response.gameByGender;
     gameByGender.push(favoritos);
+    setProfile(response.favoritos);
     setGameList(gameByGender)
-    
   };
-  
+
   useEffect(() => {
     loadHomePage();
   }, []);
   
-
+  
   return (
     <S.Homepage>
       <S.HomepageContent>
         <S.HomepageContentHeader>
           <S.HomepageContentHeaderMenu />
           <img
-            src="https://i.pinimg.com/474x/61/f4/71/61f4719ddfeeda214b6d8da3e321ec39.jpg"
+            src={profile.imageUrl}
             alt="imagem do perfil"
+            onClick={() => navigate('/profiles')}
           />
-          <span>Valgas</span>
+          <span>{profile.title}</span>
         </S.HomepageContentHeader>
         <S.HomepageContentMain>
           {gameList.map((game: GameByGenrerObj, index) => (

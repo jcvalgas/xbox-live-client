@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 export const GameRow = styled.div`
   ${() => css`
     margin-bottom: 3rem;
+    height: 22.5rem;
   `}
 `;
 

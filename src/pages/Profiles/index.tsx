@@ -21,8 +21,13 @@ const Profiles = () => {
     }
     const response = await loginService.loggedUser();
     setProfiles(response.profiles);
-  };
+  };  
 
+  const getProfileId = (id: string) => {
+    localStorage.setItem('profileId', id);
+    navigate('/homepage');
+  }
+  
   useEffect(() => {
     userLogged();
   }, []);  
@@ -31,7 +36,7 @@ const Profiles = () => {
     <S.Profiles>
       <S.ProfileContainer>
         <S.ProfileContainerMain>
-          {profiles.map((profile: any, index) => <CardProfile key={index} data={profile} />)}
+          {profiles.map((profile: any, index) => <CardProfile key={index} data={profile} clickItem={(profileId: string) =>  getProfileId(profileId)} />)}
         </S.ProfileContainerMain>
         <S.ProfileContainerButtonCreateProfile href="/settings/profiles">
           Gerenciar perfis
